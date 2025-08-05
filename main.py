@@ -13,7 +13,7 @@ if user_name:
     st.markdown("---")
 
     #הזנת שם העיר ודוגמה לשם עיר
-    city = st.text_input("🌍 Enter a city name:", placeholder="e.g. Tel Aviv")
+    city = st.text_input("Enter a city name:", placeholder="e.g. Tel Aviv")
 
 #בדיקה שהכל התחבר תקין וסטטוס תקין
     if st.button("Get Weather"):
@@ -37,19 +37,28 @@ if user_name:
             st.write(f"🌡Temperature: **{temp}°C**")
             st.write(f"Feels like: **{feels_like}°C**")
             st.write(f"Humidity: **{humidity}%**")
-            st.write(f"🌤Condition: **{description.capitalize()}**")
+            st.write(f"Condition: **{description.capitalize()}**")
 
             # המלצה לפי טמפרטורה
             recommendation = ""
-            if temp >= 35:
-                recommendation = "It's extremely hot! Stay hydrated and avoid direct sun exposure."
-            elif temp >= 30:
-                recommendation = "☀It's hot outside. Use sunscreen and drink plenty of water."
-            elif temp <= 0:
-                recommendation = "❄Freezing temperatures! Better to stay indoors if you can."
+            # המלצה לפי טמפרטורה
+            if temp <= 0:
+                recommendation = "Freezing temperatures! Better to stay indoors if you can."
             elif temp <= 5:
                 recommendation = "It's very cold! Wear warm clothes and stay safe."
+            elif temp <= 15:
+                recommendation = "Chilly weather. A light jacket might be a good idea."
+            elif temp <= 25:
+                recommendation = "Pleasant weather. Enjoy your day!"
+            elif temp <= 30:
+                recommendation = "It's warm. Stay hydrated and wear sunscreen."
+            elif temp <= 35:
+                recommendation = "Hot weather. Drink water and avoid long exposure to the sun."
+            else:
+                recommendation = "Extremely hot! Try to stay in cool places and drink plenty of water."
 
-            if recommendation:
-                st.markdown("---")
-                st.markdown(f"###Recommendation:\n**{recommendation}**")
+            st.markdown(f"\n**{recommendation}**")
+
+
+        else:
+            st.error("🚫 City not found. Please enter a valid city name.")
