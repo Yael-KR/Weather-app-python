@@ -1,22 +1,18 @@
-התחלתי לכתוב בגוגל קולאב, ולאחר מכן העליתי את הקובץ לפיי צ'ארם.
-לאחר מכן התחלתי את התיעוד בגיט
+Weather App
+This project began in Google Colab, where I initially wrote the core functionality.  
+Later, I moved the code into PyCharm to continue development in a local environment.  
+From that point on, I used Git for version control and documentation.
 
-בניתי אפליקציית סטרימליט שמציגה את מזג האוויר בהתאם לעיר שהמשתמש מזין.
+The project is a simple Streamlit application that displays current weather information  
+based on the city entered by the user.
 
- מה האפליקציה עושה?
-- מקבלת מהמשתמש שם ועיר
-- מושכת נתוני מזג אוויר מ־OpenWeatherMap API
+What the app does
+- Takes the user's name and city as input  
+- Retrieves weather data from the OpenWeatherMap API  
 
-מציגה:
-  - טמפרטורה נוכחית
-  - "מרגיש כמו"
-  - אחוזי לחות
-  - תיאור כללי של מזג האוויר
-- מציעה המלצה  בהתאם למזג האוויר
-
-
-
-איך להריץ:
-```bash
-poetry install
-poetry run streamlit run main.py
+Displays:
+- Current temperature  
+- "Feels like" temperature  
+- Humidity level  
+- General weather condition  
+- Provides a recommendation based on the current temperature
