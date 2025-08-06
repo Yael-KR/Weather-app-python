@@ -16,3 +16,7 @@ Displays:
 - Humidity level  
 - General weather condition  
 - Provides a recommendation based on the current temperature
+
+
+app URL - 
+https://weather-app-python-hv83kco6ml3jjsk7tcojs7.streamlit.app/
